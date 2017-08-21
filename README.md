@@ -8,7 +8,7 @@
 
 1. `git clone`
 2. `npm install`
-3. `electron main.js`
+3. `npm run dev`
 
 ### Install youtube-dl
 

@@ -4,3 +4,7 @@ node_modules
 *.mp3
 *.m4a
 .idea
+videos
+env
+*.log
+*.part

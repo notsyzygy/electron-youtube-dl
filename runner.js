@@ -135,18 +135,23 @@ function parseYouTubePlayList(log){
 	}
 }
 
-$('#button').on('click', function () {	
-	var link = document.querySelectorAll('#textArea')[0].value;
-	var options =
-	['--no-check-certificate', '--extract-audio', '--audio-format', 'mp3' ,link];
+// $('.openDownload').on('click', function (e) {
+// 	var $file = $()shell.openItem(fullPath)
+// })
 
-	var child = spawn('youtube-dl',options);
+$('#addDownload').on('click', function (e) {	
+
+	var link = document.querySelectorAll('#downloadUrl')[0].value;
+	var options = ['--no-check-certificate', '--output=./videos/%(title)s-%(extractor_key)s%(id)s.%(ext)s', link];
+
+	var child = spawn('youtube-dl', options);
 
 	child.stdout.on('data', function(chunk) {
+		// reset form
+		$('#downloadUrl').val('')
 		//todo: process the logs and do stuff according to regex..
 		//$('#progress').append(chunk+"</br><br>");
 		splitAndDisplayLog(chunk);
-		
 	});
 
 	child.stderr.on('data', function (data) {

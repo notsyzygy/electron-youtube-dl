@@ -3,19 +3,31 @@
    <head>
       <meta charset="UTF-8">
       <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <title>Youtube-dl downloader</title>
+      <title>Electron Youtube-dl Downloader</title>
    </head>
    <body>
       <div class="container">
          <h1>Youtube-dl downloader</h1>
-         <input type="text" id="textArea" placeholder="link"/>
-         <input type="button" id="button" value="Start" />
-         <h2>PlayList</h2>
+
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h3 class="panel-title">Download a video or playlist..</h3>
+           </div>
+           <div class="panel-body">
+             <form class="form-inline">
+                <div class="form-group">
+                   <input type="text" id="downloadUrl" class="form-control" placeholder="Video link"/>
+                   <input type="button" id="addDownload" class="btn btn-primary" value="Start" />
+                </div>
+             </form>
+           </div>
+         </div>
+         <h2>PlayList Status</h2>
          <div id="ListData">
             <p id="listStatus"></p>
             <p id="listProgress"></p>
          </div>
-         <h2>Download</h2>
+         <h2>Video Download Status</h2>
          <div id="downloadData">
             <div id="downloadStatus">
               <p id="videoNumber">
